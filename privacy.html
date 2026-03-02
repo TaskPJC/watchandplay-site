@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy &amp; Terms: Watch&Play</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --bg2: #1a1f2e;
+      --bg3: #252a35;
+      --border: rgba(255,255,255,0.08);
+      --text: #e0e0e0;
+      --text2: #999;
+      --accent: #3b82f6;
+      --accent2: #8b5cf6;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --bg2: #ffffff;
+        --bg3: #f0f2f8;
+        --border: rgba(0,0,0,0.08);
+        --text: #111;
+        --text2: #666;
+        --accent: #2563eb;
+        --accent2: #7c3aed;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .header-brand {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .header-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* Navigation tabs */
+    .tab-nav {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .tab-btn {
+      padding: 14px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text2);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Main layout */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    /* Tab panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Section headings */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 32px 0 12px;
+    }
+
+    .section-label:first-child { margin-top: 0; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 6px;
+    }
+
+    p {
+      color: var(--text2);
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      color: var(--text2);
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li { margin-bottom: 4px; }
+
+    /* Cards */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+    }
+
+    /* Highlight boxes */
+    .highlight {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .highlight p { color: var(--text); margin: 0; font-weight: 500; }
+
+    /* Data rows */
+    .data-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .data-row:first-child { padding-top: 0; }
+
+    .data-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .data-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .data-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    code {
+      font-size: 11px;
+      background: var(--bg3);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* Contact card */
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--bg3);
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text2);
+      font-size: 12px;
+    }
+
+    .page-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .effective-date {
+      display: inline-block;
+      background: var(--bg3);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--text2);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <a class="header-logo" href="#">
+        <img src="../icons/logo.png" alt="Watch&Play logo" />
+        <span class="header-brand">Watch&Play</span>
+      </a>
+      <h1>Legal Documents</h1>
+      <div class="header-meta">Privacy Policy &amp; Terms of Service</div>
+    </div>
+  </div>
+
+  <!-- Tab nav -->
+  <div style="background:var(--bg2); border-bottom:1px solid var(--border);">
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="privacy">Privacy Policy</button>
+      <button class="tab-btn" data-tab="terms">Terms of Service</button>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-wrap">
+
+    <!-- ═══════════════════════════════════════
+         PRIVACY POLICY
+    ═══════════════════════════════════════ -->
+    <div class="tab-panel active" id="tab-privacy">
+
+      <span class="effective-date">Effective date: March 1, 2026</span>
+
+      <div class="highlight">
+        <p>Short version: Watch&Play stores a small amount of data <strong>locally in your browser only</strong> to power features like gem rewards, high scores, and invite codes. <strong>None of this is ever transmitted to me or anyone else.</strong> I have no server. I cannot see your data. I do not know who you are.</p>
+      </div>
+
+      <div class="section-label">Overview</div>
+      <div class="card">
+        <h2>Privacy Policy</h2>
+        <p>This Privacy Policy describes exactly how Watch&Play ("the Extension") handles data when you use it. I am committed to being fully transparent, including about the things the extension <em>does</em> store locally, so you have a complete and honest picture.</p>
+        <p>By installing and using Watch&Play, you agree to the practices described in this policy.</p>
+      </div>
+
+      <div class="section-label">What Watch&Play Does NOT Do</div>
+      <div class="card">
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No data is ever transmitted to me</div>
+            <div class="data-desc">Watch&Play has no server, no backend, and no remote API. The extension makes zero outbound network requests to any Watch&Play-controlled infrastructure. Everything it stores stays in your own browser.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No analytics or telemetry</div>
+            <div class="data-desc">I do not use Google Analytics, Mixpanel, Sentry, or any other analytics or crash-reporting service. No usage data, game sessions, or interaction events are ever sent anywhere.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No advertising or data selling</div>
+            <div class="data-desc">Watch&Play contains no advertisements and no monetisation systems that involve user data. I do not sell, rent, or share any data with advertisers or third parties, because I simply never receive your data in the first place.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No access to your browsing or accounts</div>
+            <div class="data-desc">Watch&Play does not read your YouTube account details, viewing history, Spotify account, or any page content. It only injects its own game panel UI into supported pages using standard browser extension APIs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">What Watch&Play Stores Locally</div>
+      <div class="card">
+        <p>The following data is stored <strong>only on your device</strong> using Chrome's built-in storage APIs (<code>chrome.storage.local</code>, <code>chrome.storage.sync</code>). None of it is transmitted to me. Here is a complete and honest list:</p>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Game preferences (<code>chrome.storage.sync</code>)</div>
+            <div class="data-desc">Your settings (theme, which games are enabled, key bindings, game display order) are stored via <code>chrome.storage.sync</code>. <strong>Important:</strong> if you have Chrome Sync turned on in your Google account, Chrome itself will upload these preferences to Google's servers to sync them across your own devices. This is a standard Chrome feature, handled entirely by Google. Watch&Play has no involvement in or visibility into that process. If you prefer to prevent this, you can disable Chrome Sync in your browser settings.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Game progress (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">Your achievements, gem count, high scores, best times, and per-game saves (e.g. Knight Puzzle progress) are stored in <code>chrome.storage.local</code>. This storage is private to the extension and is shared across supported sites (YouTube and Spotify) so your progress is unified: your gems earned on YouTube are the same gems you see on Spotify. This data never leaves your device.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Gem transaction history (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">To power the Gems History view in the app, the extension keeps a local log of your last 50 gem transactions, recording which game earned them, how many gems, and when. This log is stored only on your device and is never transmitted.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Local session ID and invite code (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">To support the invite/referral gem-bonus feature, the extension generates a random identifier for your browser session (<code>alpha1_user_id</code>) and a shareable invite code (<code>alpha1_invite_code</code>) the first time it runs. These are random strings with no connection to your identity: they are not your name, email, or Google account. They are stored locally only and are used solely to calculate gem bonuses when you or a friend redeems an invite code. They are never transmitted to me or any third party.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Referral tracking (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">If you use an invite code, the extension records which code you used and how many friends you have referred (<code>alpha1_referral_source</code>, <code>alpha1_referral_count</code>). This is used purely to calculate gem rewards within the app. All of this stays in your browser.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Device fingerprint (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">The extension generates a basic device fingerprint from your browser's user-agent string, screen dimensions, and timezone. This fingerprint is stored locally as <code>alpha1_device_fingerprint</code> and is used only to detect if you've switched to a different browser or device, so that invite-code gem bonuses are awarded once per device rather than infinitely. This fingerprint is never transmitted. It contains no information that could identify you as a person outside of your own browser.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Deleting your data</div>
+            <div class="data-desc">You can reset all Watch&Play data at any time via the Settings page → Reset section. Uninstalling the extension removes all <code>chrome.storage.local</code> data automatically. Note: <code>chrome.storage.sync</code> data (preferences) may persist in your Google account if Chrome Sync is enabled; you can remove it by clearing synced extension data from your Google account settings.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Supported Sites</div>
+      <div class="card">
+        <h3>YouTube (<code>youtube.com</code>)</h3>
+        <p>Watch&Play injects a game panel into YouTube watch pages. It does not read, modify, or intercept your YouTube account, viewing history, video content, or any YouTube API. It does not bypass YouTube's advertising or content systems.</p>
+        <h3>Spotify (<code>open.spotify.com</code>)</h3>
+        <p>Watch&Play injects a small icon button into Spotify's navigation bar as a hidden feature to launch the game panel. It does not access your Spotify account, listening history, playlists, or any Spotify data. The game panel on Spotify is identical to the YouTube version and is entirely self-contained.</p>
+        <p style="margin-top:10px;">Watch&Play does not integrate with any third-party services, SDKs, or external APIs on any site it operates on.</p>
+      </div>
+
+      <div class="section-label">Chrome Permissions Explained</div>
+      <div class="card">
+        <p>Watch&Play requests the following Chrome permissions. Each one is used for exactly the purpose described below and nothing else:</p>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>activeTab</code></div>
+            <div class="data-desc">Allows the extension's content scripts to run in the active tab. Used to detect the current page (YouTube watch page, Spotify) and render the game panel at the right time.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>scripting</code></div>
+            <div class="data-desc">Allows the background service worker to communicate with content scripts. Used to relay messages (e.g. "open settings page") between the extension popup and the active tab.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>storage</code></div>
+            <div class="data-desc">Grants access to <code>chrome.storage.sync</code> (for synced preferences) and <code>chrome.storage.local</code> (for local game data, scores, gems, and identifiers). This is the only storage mechanism the extension uses.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>tabs</code></div>
+            <div class="data-desc">Used <strong>only</strong> to open the Settings page and this Privacy Policy in a new browser tab when you click the relevant links in the extension popup. It is <strong>not</strong> used to read, monitor, or access the content of any browser tab, including the YouTube or Spotify tabs the extension runs on. Tab content is accessed through content scripts declared in the manifest, not through the <code>tabs</code> API.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Children's Privacy</div>
+      <div class="card">
+        <p>Watch&Play's games are family-friendly and contain no content inappropriate for any age group. The extension does not transmit any data externally, which means no personal information from children (or anyone) is sent to me or any third party.</p>
+        <p>The extension does store a random local session ID and device fingerprint as described above. These identifiers have no connection to a child's (or any user's) real-world identity and are used only to support gem rewards within the app. Parents or guardians can clear all stored data at any time via Settings → Reset, or by uninstalling the extension.</p>
+        <p>If you are a parent or guardian with questions about this, please contact me at <a href="mailto:watchandplay.dev@gmail.com" style="color:var(--accent);">watchandplay.dev@gmail.com</a>.</p>
+      </div>
+
+      <div class="section-label">Changes to This Policy</div>
+      <div class="card">
+        <p>If I make a meaningful change to this Privacy Policy, I will update the effective date at the top of this page and note the change in the Chrome Web Store update description. I am committed to being transparent: I will never quietly expand data practices without updating this document.</p>
+      </div>
+
+      <div class="section-label">Contact</div>
+      <div class="card">
+        <p>If you have any questions or concerns about this Privacy Policy, please contact me directly:</p>
+        <div class="contact-block">
+          <div>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">Email</div>
+            <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-privacy -->
+
+
+    <!-- ═══════════════════════════════════════
+         TERMS OF SERVICE
+    ═══════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-terms">
+
+      <span class="effective-date">Effective date: March 1, 2026</span>
+
+      <div class="highlight">
+        <p>Short version: Watch&Play is free to use, provided as-is, and I ask that you use it fairly and don't try to break or redistribute it without permission.</p>
+      </div>
+
+      <div class="section-label">Agreement</div>
+      <div class="card">
+        <h2>Terms of Service</h2>
+        <p>These Terms of Service ("Terms") govern your use of the Watch&Play Chrome extension ("the Extension"). By installing or using Watch&Play, you agree to be bound by these Terms. If you do not agree, please uninstall the Extension.</p>
+      </div>
+
+      <div class="section-label">License to Use</div>
+      <div class="card">
+        <h3>What you may do</h3>
+        <ul>
+          <li>Install and use Watch&Play on any number of personal devices</li>
+          <li>Use the Extension for personal, non-commercial enjoyment</li>
+          <li>Share the Chrome Web Store listing with others</li>
+          <li>Provide feedback and suggestions to help improve the Extension</li>
+        </ul>
+        <h3>What you may not do</h3>
+        <ul>
+          <li>Redistribute, resell, or sublicense the Extension or its source code</li>
+          <li>Reverse-engineer the Extension for commercial purposes</li>
+          <li>Remove or alter copyright or attribution notices</li>
+          <li>Use the Watch&Play name or logo without permission</li>
+          <li>Attempt to exploit, hack, or disrupt the Extension</li>
+          <li>Use the Extension in any way that violates applicable law</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Intellectual Property</div>
+      <div class="card">
+        <p>All game code, artwork, designs, game mechanics, and branding in Watch&Play are the intellectual property of the Watch&Play developer. The game concepts themselves (e.g., snake, minesweeper) are in the public domain, but my specific implementations are original works.</p>
+        <p>The Watch&Play name and logo are not to be used without prior written permission from the developer.</p>
+      </div>
+
+      <div class="section-label">Disclaimer of Warranties</div>
+      <div class="card">
+        <p>Watch&Play is provided <strong>"as is"</strong> and <strong>"as available"</strong> without any warranty of any kind, express or implied. I make no guarantees that:</p>
+        <ul>
+          <li>The Extension will work on all versions of Chrome or all devices</li>
+          <li>The Extension will be free of bugs, errors, or interruptions</li>
+          <li>The Extension will be compatible with future YouTube or Spotify updates</li>
+          <li>Game progress or data will never be lost due to browser updates or extension reinstallation</li>
+        </ul>
+        <p>You use Watch&Play entirely at your own risk. I am not responsible for any data loss resulting from use of the Extension.</p>
+      </div>
+
+      <div class="section-label">Limitation of Liability</div>
+      <div class="card">
+        <p>To the maximum extent permitted by law, the Watch&Play developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Extension, even if advised of the possibility of such damages.</p>
+        <p>My total liability to you for any claim arising from use of the Extension shall not exceed the amount you paid for the Extension. Since Watch&Play is free, this means my total liability is $0.00.</p>
+      </div>
+
+      <div class="section-label">User Conduct</div>
+      <div class="card">
+        <p>You agree to use Watch&Play only for lawful purposes and in a manner that does not infringe the rights of others. You must not use the Extension to:</p>
+        <ul>
+          <li>Violate any local, national, or international law or regulation</li>
+          <li>Harass, abuse, or harm any person</li>
+          <li>Attempt to gain unauthorized access to any system or network</li>
+          <li>Interfere with other users' enjoyment of the Extension</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Updates & Changes</div>
+      <div class="card">
+        <p>I reserve the right to update, modify, or discontinue Watch&Play at any time without prior notice. Updates delivered through the Chrome Web Store may change functionality, add features, or remove games. Continued use of the Extension after an update constitutes acceptance of any changes to these Terms.</p>
+        <p>I also reserve the right to update these Terms at any time. Changes take effect upon the updated effective date being published.</p>
+      </div>
+
+      <div class="section-label">Governing Law</div>
+      <div class="card">
+        <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of Watch&Play shall be resolved through good-faith negotiation first. If a dispute cannot be resolved informally, it shall be subject to the jurisdiction of the courts in the developer's country of residence.</p>
+      </div>
+
+      <div class="section-label">Contact</div>
+      <div class="card">
+        <p>If you have any questions about these Terms of Service, please contact me:</p>
+        <div class="contact-block">
+          <div>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">Email</div>
+            <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-terms -->
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <p>© 2026 Watch&Play. All rights reserved.</p>
+      <p style="margin-top:6px;">Questions? <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a></p>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <script src="privacy.js"></script>
+
+</body>
+</html>
