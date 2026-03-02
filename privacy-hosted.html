@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy &amp; Terms: Watch&Play</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --bg2: #1a1f2e;
+      --bg3: #252a35;
+      --border: rgba(255,255,255,0.08);
+      --text: #e0e0e0;
+      --text2: #999;
+      --accent: #3b82f6;
+      --accent2: #8b5cf6;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f4f6fb;
+        --bg2: #ffffff;
+        --bg3: #f0f2f8;
+        --border: rgba(0,0,0,0.08);
+        --text: #111;
+        --text2: #666;
+        --accent: #2563eb;
+        --accent2: #7c3aed;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      padding: 28px 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      text-decoration: none;
+    }
+
+    .header-logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .header-brand {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .header-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    /* Navigation tabs */
+    .tab-nav {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .tab-btn {
+      padding: 14px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text2);
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Main layout */
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    /* Tab panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Section headings */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 32px 0 12px;
+    }
+
+    .section-label:first-child { margin-top: 0; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 6px;
+    }
+
+    p {
+      color: var(--text2);
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      color: var(--text2);
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    li { margin-bottom: 4px; }
+
+    /* Cards */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 14px;
+    }
+
+    /* Highlight boxes */
+    .highlight {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .highlight p { color: var(--text); margin: 0; font-weight: 500; }
+
+    /* Data rows */
+    .data-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .data-row:first-child { padding-top: 0; }
+
+    .data-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .data-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .data-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    code {
+      font-size: 11px;
+      background: var(--bg3);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* Contact card */
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--bg3);
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text2);
+      font-size: 12px;
+    }
+
+    .page-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+
+    .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .effective-date {
+      display: inline-block;
+      background: var(--bg3);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--text2);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <img src="data:image/png;base64,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AggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAgggUE/g/wFd19JYjzjh5wAAAABJRU5ErkJggg==" alt="Watch&Play logo" />
+        <span class="header-brand">Watch&Play</span>
+      </div>
+      <h1>Legal Documents</h1>
+      <div class="header-meta">Privacy Policy &amp; Terms of Service</div>
+    </div>
+  </div>
+
+  <!-- Tab nav -->
+  <div style="background:var(--bg2); border-bottom:1px solid var(--border);">
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="privacy">Privacy Policy</button>
+      <button class="tab-btn" data-tab="terms">Terms of Service</button>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-wrap">
+
+    <!-- ═══════════════════════════════════════
+         PRIVACY POLICY
+    ═══════════════════════════════════════ -->
+    <div class="tab-panel active" id="tab-privacy">
+
+      <span class="effective-date">Effective date: March 1, 2026</span>
+
+      <div class="highlight">
+        <p>Short version: Watch&Play stores a small amount of data <strong>locally in your browser only</strong> to power features like gem rewards, high scores, and invite codes. <strong>None of this is ever transmitted to me or anyone else.</strong> I have no server. I cannot see your data. I do not know who you are.</p>
+      </div>
+
+      <div class="section-label">Overview</div>
+      <div class="card">
+        <h2>Privacy Policy</h2>
+        <p>This Privacy Policy describes exactly how Watch&Play ("the Extension") handles data when you use it. I am committed to being fully transparent, including about the things the extension <em>does</em> store locally, so you have a complete and honest picture.</p>
+        <p>By installing and using Watch&Play, you agree to the practices described in this policy.</p>
+      </div>
+
+      <div class="section-label">What Watch&Play Does NOT Do</div>
+      <div class="card">
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No data is ever transmitted to me</div>
+            <div class="data-desc">Watch&Play has no server, no backend, and no remote API. The extension makes zero outbound network requests to any Watch&Play-controlled infrastructure. Everything it stores stays in your own browser.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No analytics or telemetry</div>
+            <div class="data-desc">I do not use Google Analytics, Mixpanel, Sentry, or any other analytics or crash-reporting service. No usage data, game sessions, or interaction events are ever sent anywhere.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No advertising or data selling</div>
+            <div class="data-desc">Watch&Play contains no advertisements and no monetisation systems that involve user data. I do not sell, rent, or share any data with advertisers or third parties, because I simply never receive your data in the first place.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">No access to your browsing or accounts</div>
+            <div class="data-desc">Watch&Play does not read your YouTube account details, viewing history, Spotify account, or any page content. It only injects its own game panel UI into supported pages using standard browser extension APIs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">What Watch&Play Stores Locally</div>
+      <div class="card">
+        <p>The following data is stored <strong>only on your device</strong> using Chrome's built-in storage APIs (<code>chrome.storage.local</code>, <code>chrome.storage.sync</code>). None of it is transmitted to me. Here is a complete and honest list:</p>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Game preferences (<code>chrome.storage.sync</code>)</div>
+            <div class="data-desc">Your settings (theme, which games are enabled, key bindings, game display order) are stored via <code>chrome.storage.sync</code>. <strong>Important:</strong> if you have Chrome Sync turned on in your Google account, Chrome itself will upload these preferences to Google's servers to sync them across your own devices. This is a standard Chrome feature, handled entirely by Google. Watch&Play has no involvement in or visibility into that process. If you prefer to prevent this, you can disable Chrome Sync in your browser settings.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Game progress (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">Your achievements, gem count, high scores, best times, and per-game saves (e.g. Knight Puzzle progress) are stored in <code>chrome.storage.local</code>. This storage is private to the extension and is shared across supported sites (YouTube and Spotify) so your progress is unified: your gems earned on YouTube are the same gems you see on Spotify. This data never leaves your device.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Gem transaction history (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">To power the Gems History view in the app, the extension keeps a local log of your last 50 gem transactions, recording which game earned them, how many gems, and when. This log is stored only on your device and is never transmitted.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Local session ID and invite code (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">To support the invite/referral gem-bonus feature, the extension generates a random identifier for your browser session (<code>alpha1_user_id</code>) and a shareable invite code (<code>alpha1_invite_code</code>) the first time it runs. These are random strings with no connection to your identity: they are not your name, email, or Google account. They are stored locally only and are used solely to calculate gem bonuses when you or a friend redeems an invite code. They are never transmitted to me or any third party.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Referral tracking (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">If you use an invite code, the extension records which code you used and how many friends you have referred (<code>alpha1_referral_source</code>, <code>alpha1_referral_count</code>). This is used purely to calculate gem rewards within the app. All of this stays in your browser.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Device fingerprint (<code>chrome.storage.local</code>)</div>
+            <div class="data-desc">The extension generates a basic device fingerprint from your browser's user-agent string, screen dimensions, and timezone. This fingerprint is stored locally as <code>alpha1_device_fingerprint</code> and is used only to detect if you've switched to a different browser or device, so that invite-code gem bonuses are awarded once per device rather than infinitely. This fingerprint is never transmitted. It contains no information that could identify you as a person outside of your own browser.</div>
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label">Deleting your data</div>
+            <div class="data-desc">You can reset all Watch&Play data at any time via the Settings page → Reset section. Uninstalling the extension removes all <code>chrome.storage.local</code> data automatically. Note: <code>chrome.storage.sync</code> data (preferences) may persist in your Google account if Chrome Sync is enabled; you can remove it by clearing synced extension data from your Google account settings.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Supported Sites</div>
+      <div class="card">
+        <h3>YouTube (<code>youtube.com</code>)</h3>
+        <p>Watch&Play injects a game panel into YouTube watch pages. It does not read, modify, or intercept your YouTube account, viewing history, video content, or any YouTube API. It does not bypass YouTube's advertising or content systems.</p>
+        <h3>Spotify (<code>open.spotify.com</code>)</h3>
+        <p>Watch&Play injects a small icon button into Spotify's navigation bar as a hidden feature to launch the game panel. It does not access your Spotify account, listening history, playlists, or any Spotify data. The game panel on Spotify is identical to the YouTube version and is entirely self-contained.</p>
+        <p style="margin-top:10px;">Watch&Play does not integrate with any third-party services, SDKs, or external APIs on any site it operates on.</p>
+      </div>
+
+      <div class="section-label">Chrome Permissions Explained</div>
+      <div class="card">
+        <p>Watch&Play requests the following Chrome permissions. Each one is used for exactly the purpose described below and nothing else:</p>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>activeTab</code></div>
+            <div class="data-desc">Allows the extension's content scripts to run in the active tab. Used to detect the current page (YouTube watch page, Spotify) and render the game panel at the right time.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>scripting</code></div>
+            <div class="data-desc">Allows the background service worker to communicate with content scripts. Used to relay messages (e.g. "open settings page") between the extension popup and the active tab.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>storage</code></div>
+            <div class="data-desc">Grants access to <code>chrome.storage.sync</code> (for synced preferences) and <code>chrome.storage.local</code> (for local game data, scores, gems, and identifiers). This is the only storage mechanism the extension uses.</div>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="data-body">
+            <div class="data-label"><code>tabs</code></div>
+            <div class="data-desc">Used <strong>only</strong> to open the Settings page and this Privacy Policy in a new browser tab when you click the relevant links in the extension popup. It is <strong>not</strong> used to read, monitor, or access the content of any browser tab, including the YouTube or Spotify tabs the extension runs on. Tab content is accessed through content scripts declared in the manifest, not through the <code>tabs</code> API.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Children's Privacy</div>
+      <div class="card">
+        <p>Watch&Play's games are family-friendly and contain no content inappropriate for any age group. The extension does not transmit any data externally, which means no personal information from children (or anyone) is sent to me or any third party.</p>
+        <p>The extension does store a random local session ID and device fingerprint as described above. These identifiers have no connection to a child's (or any user's) real-world identity and are used only to support gem rewards within the app. Parents or guardians can clear all stored data at any time via Settings → Reset, or by uninstalling the extension.</p>
+        <p>If you are a parent or guardian with questions about this, please contact me at <a href="mailto:watchandplay.dev@gmail.com" style="color:var(--accent);">watchandplay.dev@gmail.com</a>.</p>
+      </div>
+
+      <div class="section-label">Changes to This Policy</div>
+      <div class="card">
+        <p>If I make a meaningful change to this Privacy Policy, I will update the effective date at the top of this page and note the change in the Chrome Web Store update description. I am committed to being transparent: I will never quietly expand data practices without updating this document.</p>
+      </div>
+
+      <div class="section-label">Contact</div>
+      <div class="card">
+        <p>If you have any questions or concerns about this Privacy Policy, please contact me directly:</p>
+        <div class="contact-block">
+          <div>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">Email</div>
+            <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-privacy -->
+
+
+    <!-- ═══════════════════════════════════════
+         TERMS OF SERVICE
+    ═══════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-terms">
+
+      <span class="effective-date">Effective date: March 1, 2026</span>
+
+      <div class="highlight">
+        <p>Short version: Watch&Play is free to use, provided as-is, and I ask that you use it fairly and don't try to break or redistribute it without permission.</p>
+      </div>
+
+      <div class="section-label">Agreement</div>
+      <div class="card">
+        <h2>Terms of Service</h2>
+        <p>These Terms of Service ("Terms") govern your use of the Watch&Play Chrome extension ("the Extension"). By installing or using Watch&Play, you agree to be bound by these Terms. If you do not agree, please uninstall the Extension.</p>
+      </div>
+
+      <div class="section-label">License to Use</div>
+      <div class="card">
+        <h3>What you may do</h3>
+        <ul>
+          <li>Install and use Watch&Play on any number of personal devices</li>
+          <li>Use the Extension for personal, non-commercial enjoyment</li>
+          <li>Share the Chrome Web Store listing with others</li>
+          <li>Provide feedback and suggestions to help improve the Extension</li>
+        </ul>
+        <h3>What you may not do</h3>
+        <ul>
+          <li>Redistribute, resell, or sublicense the Extension or its source code</li>
+          <li>Reverse-engineer the Extension for commercial purposes</li>
+          <li>Remove or alter copyright or attribution notices</li>
+          <li>Use the Watch&Play name or logo without permission</li>
+          <li>Attempt to exploit, hack, or disrupt the Extension</li>
+          <li>Use the Extension in any way that violates applicable law</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Intellectual Property</div>
+      <div class="card">
+        <p>All game code, artwork, designs, game mechanics, and branding in Watch&Play are the intellectual property of the Watch&Play developer. The game concepts themselves (e.g., snake, minesweeper) are in the public domain, but my specific implementations are original works.</p>
+        <p>The Watch&Play name and logo are not to be used without prior written permission from the developer.</p>
+      </div>
+
+      <div class="section-label">Disclaimer of Warranties</div>
+      <div class="card">
+        <p>Watch&Play is provided <strong>"as is"</strong> and <strong>"as available"</strong> without any warranty of any kind, express or implied. I make no guarantees that:</p>
+        <ul>
+          <li>The Extension will work on all versions of Chrome or all devices</li>
+          <li>The Extension will be free of bugs, errors, or interruptions</li>
+          <li>The Extension will be compatible with future YouTube or Spotify updates</li>
+          <li>Game progress or data will never be lost due to browser updates or extension reinstallation</li>
+        </ul>
+        <p>You use Watch&Play entirely at your own risk. I am not responsible for any data loss resulting from use of the Extension.</p>
+      </div>
+
+      <div class="section-label">Limitation of Liability</div>
+      <div class="card">
+        <p>To the maximum extent permitted by law, the Watch&Play developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the Extension, even if advised of the possibility of such damages.</p>
+        <p>My total liability to you for any claim arising from use of the Extension shall not exceed the amount you paid for the Extension. Since Watch&Play is free, this means my total liability is $0.00.</p>
+      </div>
+
+      <div class="section-label">User Conduct</div>
+      <div class="card">
+        <p>You agree to use Watch&Play only for lawful purposes and in a manner that does not infringe the rights of others. You must not use the Extension to:</p>
+        <ul>
+          <li>Violate any local, national, or international law or regulation</li>
+          <li>Harass, abuse, or harm any person</li>
+          <li>Attempt to gain unauthorized access to any system or network</li>
+          <li>Interfere with other users' enjoyment of the Extension</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Updates & Changes</div>
+      <div class="card">
+        <p>I reserve the right to update, modify, or discontinue Watch&Play at any time without prior notice. Updates delivered through the Chrome Web Store may change functionality, add features, or remove games. Continued use of the Extension after an update constitutes acceptance of any changes to these Terms.</p>
+        <p>I also reserve the right to update these Terms at any time. Changes take effect upon the updated effective date being published.</p>
+      </div>
+
+      <div class="section-label">Governing Law</div>
+      <div class="card">
+        <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of Watch&Play shall be resolved through good-faith negotiation first. If a dispute cannot be resolved informally, it shall be subject to the jurisdiction of the courts in the developer's country of residence.</p>
+      </div>
+
+      <div class="section-label">Contact</div>
+      <div class="card">
+        <p>If you have any questions about these Terms of Service, please contact me:</p>
+        <div class="contact-block">
+          <div>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:2px;">Email</div>
+            <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tab-terms -->
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <p>© 2026 Watch&Play. All rights reserved.</p>
+      <p style="margin-top:6px;">Questions? <a href="mailto:watchandplay.dev@gmail.com">watchandplay.dev@gmail.com</a></p>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+  <script>
+'use strict';
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.tab-panel');
+function switchTab(tabId) {
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+  panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + tabId));
+}
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+});
+const hash = location.hash.replace('#', '');
+if (hash === 'terms') switchTab('terms');
+else switchTab('privacy');
+</script>
+
+</body>
+</html>
